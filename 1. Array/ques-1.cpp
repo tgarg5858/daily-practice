@@ -3,29 +3,36 @@ using namespace std;
 
 int main(){
 
-    // find the total number of pairs in the Array whose
-    // sum is equal to the given value x.
+    //sort an Array consisting of only 0s and 1s ?
 
-    int array[5]={3,4,6,7,1};
-
-    int x;
-    cout<<"enter the value of x"<<endl;
-    cin>>x;
-    int output=0;
-    //cout<<sizeof(array)<<endl;
-
-    for(int i=0;i<5;i++){
-
-        for (int j = i+1; j < 5; j++)
+    int array[8]{1,0,1,0,1,1,0,0};
+    int one=0;
+    int zero=0;
+    for(int i = 0; i < 8; i++)
+    {
+        if (array[i]==0)
         {
-        if (array[i]+array[j]==x && i!=j)
-        {
-            output++;
+            one++;
         }
+        else{
+            zero++;
         }
         
     }
-    cout<<output<<endl;
-
+    int ansarray[8];
+    for (int i = 0; i < zero; i++)
+    {
+        ansarray[i]=0;
+    }
+    
+    for (int i = zero; i < zero+one; i++)
+    {
+        ansarray[i]=1;
+    }
+    for (int i = 0; i < zero+one; i++)
+    {
+        cout<<ansarray[i]<<" ";
+    }
+    
     return 0;
 }
