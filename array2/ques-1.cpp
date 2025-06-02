@@ -3,39 +3,29 @@ using namespace std;
 
 int main(){
 
-    // Write a program to display multiplication of two matrices
-    // entered by the user.
-    /* | 1 2 |   | 5 6 |
-       | 3 4 |   | 7 8 |   
-    */
+    // find the total number of pairs in the Array whose
+    // sum is equal to the given value x.
 
-    int array[2][2]={{1,2},{3,4}};
-    int array2[2][2]={5,6,7,8};
-    int c[2][2];
-    int ans=0;
+    int array[5]={3,4,6,7,1};
 
-    if (/*c1!=r2*/2!=2)
-    {
-        cout<<"matrix multiplication is not allowed";
-    }
-    
-    for (int i = 0; i < 2; i++)
-    {
-        for(int j=0; j<2; j++){
-            for(int k=0; k<2; k++){
-                ans+=array[i][k]*array2[k][j];
+    int x;
+    cout<<"enter the value of x"<<endl;
+    cin>>x;
+    int output=0;
+    //cout<<sizeof(array)<<endl;
 
-            }
-            c[i][j]=ans;
+    for(int i=0;i<5;i++){
+
+        for (int j = i+1; j < 5; j++)
+        {
+        if (array[i]+array[j]==x && i!=j)
+        {
+            output++;
         }
+        }
+        
     }
+    cout<<output<<endl;
 
-    for (int i = 0; i < 2; i++)
-    {   for (int j = 0; j < 2; j++)
-    {
-        cout<<c[i][j]<<" ";
-    }cout<<endl;
-    }
-    
     return 0;
 }
